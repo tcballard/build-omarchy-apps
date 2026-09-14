@@ -1,0 +1,20 @@
+{
+  "name": "build-omarchy-apps",
+  "version": "0.1.0",
+  "description": "Design, build, integrate, test, package and prepare standalone Omarchy applications.",
+  "author": {
+    "name": "Tom Ballard",
+    "url": "https://github.com/tcballard"
+  },
+  "homepage": "https://github.com/tcballard/build-omarchy-apps",
+  "repository": "https://github.com/tcballard/build-omarchy-apps",
+  "license": "MIT",
+  "keywords": [
+    "omarchy",
+    "linux",
+    "wayland",
+    "agent-skills",
+    "application-development",
+    "developer-tools"
+  ]
+}

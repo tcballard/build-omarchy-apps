@@ -1,0 +1,4 @@
+interface:
+  display_name: "Omarchy App Test"
+  short_description: "Build Omarchy Apps: test workflows"
+  default_prompt: "Use $omarchy-app-test for this Omarchy app test task."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Omarchy App Design"
+  short_description: "Build Omarchy Apps: design workflows"
+  default_prompt: "Use $omarchy-app-design for this Omarchy app design task."

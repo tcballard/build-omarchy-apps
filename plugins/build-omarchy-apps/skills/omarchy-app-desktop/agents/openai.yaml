@@ -1,0 +1,4 @@
+interface:
+  display_name: "Omarchy App Desktop"
+  short_description: "Build Omarchy Apps: desktop workflows"
+  default_prompt: "Use $omarchy-app-desktop for this Omarchy app desktop task."

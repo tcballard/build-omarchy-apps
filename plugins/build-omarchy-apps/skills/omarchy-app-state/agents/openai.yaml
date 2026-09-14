@@ -1,0 +1,4 @@
+interface:
+  display_name: "Omarchy App State"
+  short_description: "Build Omarchy Apps: state workflows"
+  default_prompt: "Use $omarchy-app-state for this Omarchy app state task."

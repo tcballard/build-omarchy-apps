@@ -1,0 +1,44 @@
+{
+  "name": "build-omarchy-apps",
+  "version": "0.1.0",
+  "description": "Design, build, test and package standalone Omarchy apps.",
+  "author": {
+    "name": "Tom Ballard",
+    "url": "https://github.com/tcballard"
+  },
+  "homepage": "https://github.com/tcballard/build-omarchy-apps",
+  "repository": "https://github.com/tcballard/build-omarchy-apps",
+  "license": "MIT",
+  "keywords": [
+    "omarchy",
+    "apps",
+    "linux",
+    "wayland",
+    "agent-skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Build Omarchy Apps",
+    "shortDescription": "Build, test and package standalone Omarchy apps",
+    "longDescription": "Ten portable skills for standalone Omarchy apps: design, scaffold, desktop integration, state, packaging, tests, debugging, demos, releases and submissions. Rust is the v0.1.0 default; existing stacks and explicit choices are preserved.",
+    "developerName": "Tom Ballard",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/tcballard/build-omarchy-apps",
+    "privacyPolicyURL": "https://github.com/tcballard/build-omarchy-apps/blob/main/PRIVACY.md",
+    "termsOfServiceURL": "https://github.com/tcballard/build-omarchy-apps/blob/main/TERMS.md",
+    "defaultPrompt": [
+      "Design a native Omarchy app around this workflow.",
+      "Prepare this app for an Omarchy package contribution.",
+      "Validate this app and report the remaining desktop checks."
+    ],
+    "brandColor": "#8BB8E8",
+    "composerIcon": "./assets/icon.svg",
+    "logo": "./assets/icon.svg",
+    "screenshots": []
+  }
+}

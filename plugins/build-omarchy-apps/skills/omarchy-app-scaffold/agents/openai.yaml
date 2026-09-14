@@ -1,0 +1,4 @@
+interface:
+  display_name: "Omarchy App Scaffold"
+  short_description: "Build Omarchy Apps: scaffold workflows"
+  default_prompt: "Use $omarchy-app-scaffold for this Omarchy app scaffold task."

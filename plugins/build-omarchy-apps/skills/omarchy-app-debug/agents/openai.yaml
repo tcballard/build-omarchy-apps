@@ -1,0 +1,4 @@
+interface:
+  display_name: "Omarchy App Debug"
+  short_description: "Build Omarchy Apps: debug workflows"
+  default_prompt: "Use $omarchy-app-debug for this Omarchy app debug task."
