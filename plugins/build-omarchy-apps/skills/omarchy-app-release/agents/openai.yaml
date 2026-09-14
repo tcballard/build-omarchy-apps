@@ -1,0 +1,4 @@
+interface:
+  display_name: "Omarchy App Release"
+  short_description: "Build Omarchy Apps: release workflows"
+  default_prompt: "Use $omarchy-app-release for this Omarchy app release task."

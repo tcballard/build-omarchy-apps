@@ -1,0 +1,4 @@
+interface:
+  display_name: "Omarchy App Demo"
+  short_description: "Build Omarchy Apps: demo workflows"
+  default_prompt: "Use $omarchy-app-demo for this Omarchy app demo task."

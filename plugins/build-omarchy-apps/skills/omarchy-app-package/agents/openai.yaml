@@ -1,0 +1,4 @@
+interface:
+  display_name: "Omarchy App Package"
+  short_description: "Build Omarchy Apps: package workflows"
+  default_prompt: "Use $omarchy-app-package for this Omarchy app package task."

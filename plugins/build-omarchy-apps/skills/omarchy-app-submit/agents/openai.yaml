@@ -1,0 +1,4 @@
+interface:
+  display_name: "Omarchy App Submit"
+  short_description: "Build Omarchy Apps: submit workflows"
+  default_prompt: "Use $omarchy-app-submit for this Omarchy app submit task."
