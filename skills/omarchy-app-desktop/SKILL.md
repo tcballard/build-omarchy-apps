@@ -18,3 +18,7 @@ Test launcher and terminal starts, paths with spaces, missing files, keyboard tr
 This is part of Build Omarchy Apps, targeting standalone apps on Omarchy 4 / Hyprland. Intended target is not a tested compatibility range. Preserve existing project choices and current user scope. For development PRs/archives, use the handoff guidance where linked; live acceptance, app releases and repository submission remain separate stages.
 
 Before an app development PR or archive, apply [development handoff](references/handoff.md). For diagnosis-only requests, report findings without creating a handoff artifact.
+
+## Adapter boundaries
+
+Keep theme loading and portal requests behind small functions or adapters that can be exercised independently of the full window. Inject substitutes where they enable meaningful error/cancellation tests; retain real-session tests for actual integration. Theme watchers must recover when a theme file or symlink is replaced, using a documented fallback or last-good palette for malformed input. Portal cancellation, unavailable backends and late replies must leave the active session consistent. Resolve focus/modal input before widget activation where the toolkit requires it, and explicitly cancel game- or document-owned drags that cannot safely survive focus loss.

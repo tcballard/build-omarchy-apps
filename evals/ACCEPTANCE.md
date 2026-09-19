@@ -21,3 +21,14 @@ The initial portable archive omitted VERSION, so its installer failed after extr
 ## Not run / limits
 
 No live Omarchy app acceptance, no actual Cursor/Gemini/OpenCode/Claude/native OpenAI host invocation, and no provider-directory submission or acceptance. Windows/macOS portable CI is configured; its live result belongs to the PR checks and is not claimed by the local Linux run. The Rust helper's SHA-256 command dependency is verified only on Linux. Non-Rust workflow guidance is supported; non-Rust scaffold generators are not supplied in v0.1.0. The helper scaffolds documentation, not a working GUI.
+
+## Architecture guidance update — 19 September 2026
+
+Source under test: `e90d6335b63a2a8144da827ac8663e9af9d1046c`. Linux, Rust 1.98.1.
+
+- `PATH=/root/.cargo/bin:$PATH ./scripts/test`: passed, including bundle/adapter validators, Python distribution tests, 13 Rust helper tests, formatting and strict Clippy.
+- Generated a fresh documentation scaffold and ran its `check` command: passed. Manually inspected the architecture worksheet; it describes proposed decisions and does not claim a running app.
+- `git diff --check`: passed after removing an extra trailing blank line in the evaluation document.
+- OpenAI copies regenerated from canonical skills using `scripts/sync_openai_adapter.py --write`.
+- New architecture behavioral cases are specified in README.md but have not been executed against independent agents. No new host/model or live Omarchy acceptance is claimed.
+- This is an unreleased bundle update; version and installed personal skills are unchanged.

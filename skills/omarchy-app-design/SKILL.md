@@ -11,6 +11,8 @@ v0.1.0 uses Rust as the default implementation track, not an eligibility require
 
 Define a small playable/usable vertical slice, keyboard and mouse flows, window identity, theme adaptation, state ownership, offline/error behavior and performance budgets. Separate application logic from UI and OS integration. For games specify timing, pause/focus-loss and deterministic simulation; for editors specify undo, recovery and file conflicts. Do not prescribe numerical budgets without a product reason.
 
+For a new architecture or structural refactor, read [application boundaries and ownership](references/architecture.md). Record responsibility boundaries, dependency direction and resource owners at the scale the app needs; preserve the existing stack.
+
 Hand off the chosen stack and reasons, first milestone, acceptance scenarios and unresolved dependencies. Continue through Scaffold → Desktop/State → Test → development handoff. Package, Release and Submit are separate later stages. For a narrow fix, use the relevant skill directly rather than replaying the entire workflow.
 
 ## Bundle boundaries
