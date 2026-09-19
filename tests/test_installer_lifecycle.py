@@ -37,7 +37,7 @@ class InstallerLifecycleTests(unittest.TestCase):
             receipt = destination / ".build-omarchy-apps-receipt.json"
             self.assertTrue(receipt.is_file())
             payload = json.loads(receipt.read_text(encoding="utf-8"))
-            self.assertEqual("0.1.0", payload["source"]["version"])
+            self.assertEqual((REPO / "VERSION").read_text().strip(), payload["source"]["version"])
             self.assertEqual(["omarchy-app-design"], sorted(payload["skills"]))
 
             skill_file = destination / "omarchy-app-design/SKILL.md"

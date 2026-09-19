@@ -1,0 +1,46 @@
+name: Release bundle
+on:
+  workflow_run:
+    workflows: [CI]
+    types: [completed]
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: release-bundle
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.event.workflow_run.conclusion == 'success' && github.event.workflow_run.event == 'push' && github.event.workflow_run.head_repository.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+      - name: Package tested commit and publish new version
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          version=$(cat VERSION)
+          [[ "$version" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          tag="v$version"
+          notes="docs/releases/$tag.md"
+          test -f "$notes"
+          # Query the collection: authentication/network failures must fail, not imply absence.
+          existing=$(gh api --paginate "repos/$GH_REPO/releases" --jq ".[] | select(.tag_name == \"$tag\") | .tag_name")
+          if [[ -n "$existing" ]]; then
+            echo "$tag is already published; leaving it unchanged."
+            exit 0
+          fi
+          python3 scripts/package_submission.py --require-clean --git-tree HEAD --output-dir "$RUNNER_TEMP/release"
+          (cd "$RUNNER_TEMP/release" && sha256sum --check SHA256SUMS)
+          gh release create "$tag" "$RUNNER_TEMP/release/"* --target "$(git rev-parse HEAD)" --title "Build Omarchy Apps $tag" --notes-file "$notes"
