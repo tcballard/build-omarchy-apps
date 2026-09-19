@@ -9,6 +9,8 @@ Inspect the destination and choose the app slug, reverse-DNS application ID, exe
 
 Read [the helper guide](references/helper.md). Resolve commands relative to this skill's actual directory, never the caller's working directory. The Rust helper scaffolds documentation without installing anything. Add the chosen toolkit's smallest working window, separated core logic and locked dependency versions using current official toolkit instructions. Put desktop integration under a packaging directory with the same application ID as the Wayland window and icon basename. Do not claim a CLI hello-world proves a native app works.
 
+Complete the generated `ARCHITECTURE.md` with the chosen boundaries, state/resource owners and shutdown order. It is a design aid, not a demand for a fixed folder hierarchy or proof that the architecture is implemented.
+
 Complete the README purpose, build/run instructions, intended version range, actual tested versions and rollback path. Preserve the supplied community App badge at 20px height without fixing its width; it is not official certification. Record third-party licences and assets actually included. Add focused CI that builds/tests what can run there and reports missing desktop acceptance.
 
 Before delivering a PR or archive, follow [development handoff](references/handoff.md), even for an unreleased scaffold. A useful development PR may explicitly defer the UI or live testing; its scope and limitations must be visible.

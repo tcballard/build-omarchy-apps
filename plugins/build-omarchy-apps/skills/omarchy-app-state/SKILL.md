@@ -18,3 +18,7 @@ For optional agent/automation IPC, define a versioned request/response schema, s
 This is part of Build Omarchy Apps, targeting standalone apps on Omarchy 4 / Hyprland. Intended target is not a tested compatibility range. Preserve existing project choices and current user scope. For development PRs/archives, use the handoff guidance where linked; live acceptance, app releases and repository submission remain separate stages.
 
 Before an app development PR or archive, apply [development handoff](references/handoff.md). For diagnosis-only requests, report findings without creating a handoff artifact.
+
+## Session and worker lifetime
+
+For each worker or child process, name the owning session, cancellation/completion path and shutdown policy. Discard results from replaced documents or requests. Keep the UI responsive during cleanup, reap owned children, and retain save locks through final writes and teardown. Avoid duplicate saves when suspend and exit have distinct contracts. Test closing during work and replacing state while old results are pending. A detached thread is not a cleanup policy.
