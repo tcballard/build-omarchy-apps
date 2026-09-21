@@ -12,7 +12,7 @@ A companion to [Build Omarchy Plugins](https://github.com/tcballard/build-omarch
 
 ## Status
 
-**v0.2.0 development preview.** Intended target: Omarchy 4 / Hyprland. No live Omarchy acceptance or agent-directory approval is claimed. Individual apps must establish their own supported and actually tested versions. The badge is a community identity statement, not official certification.
+**v0.2.1 development preview.** Intended target: Omarchy 4 / Hyprland. No live Omarchy acceptance or agent-directory approval is claimed. Individual apps must establish their own supported and actually tested versions. The badge is a community identity statement, not official certification.
 
 ## Models and languages
 

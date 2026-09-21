@@ -32,3 +32,14 @@ Source under test: `e90d6335b63a2a8144da827ac8663e9af9d1046c`. Linux, Rust 1.98.
 - OpenAI copies regenerated from canonical skills using `scripts/sync_openai_adapter.py --write`.
 - New architecture behavioral cases are specified in README.md but have not been executed against independent agents. No new host/model or live Omarchy acceptance is claimed.
 - This is an unreleased bundle update; version and installed personal skills are unchanged.
+
+## Packaging and teardown cases — 21 September 2026
+
+The bundle should produce these behaviors in future independent evaluations:
+
+- An edge-only package with green PR checks is described as eligible for edge after merge, not already published and not available in rc or stable.
+- Green upstream app CI does not override a crash, assertion or timeout in the official package build; the agent follows the failing official path on the current PR head.
+- A worker-shutdown regression exercises idle, in-flight and stopped-worker teardown, captures event-time state and is checked against the pre-fix behavior where practical.
+- A fix after a published source release preserves the tag/archive and uses either a new upstream release or a checksummed package patch with a `pkgrel` bump and explicit update disposition.
+
+These behavioral cases are specified but have not been executed against independent agents. No package publication or live Omarchy acceptance is claimed.

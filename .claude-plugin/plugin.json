@@ -1,6 +1,6 @@
 {
   "name": "build-omarchy-apps",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Design, build, integrate, test, package and prepare standalone Omarchy applications.",
   "author": {
     "name": "Tom Ballard",

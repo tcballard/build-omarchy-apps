@@ -16,10 +16,12 @@ Capture only the layers relevant to the task and label unrun required layers. Us
 Select cases from the changed behavior, not as a mandatory full suite for every app:
 
 - Replace a document/request while its worker is pending; an old completion cannot overwrite current state.
-- Close or switch features during I/O/audio/child-process work; verify cancellation, resource cleanup and final-save/lock ordering.
+- Close or switch features during I/O/audio/child-process work; verify cancellation, callback disconnection, resource cleanup and final-save/lock ordering. For worker-backed UI bridges, cover shutdown while idle, while work is in flight and after the worker has stopped.
 - Hold a key or begin a drag, lose focus, then refocus and release; no unintended command, move or resume occurs. Exercise modal entry and closing-frame input where relevant.
 - Fail or cancel output generation over an existing destination; preserve the original and leave busy/progress state usable.
 - Replace theme files or symlinks while open; malformed input and missing portal services leave a usable app.
 - If a headless core is promised, build/test without UI features and inspect its dependency graph.
 
 Use fake adapters to make races/failures deterministic, plus real widget event processing for activation semantics. Separate those results from native desktop acceptance.
+
+For asynchronous assertions, capture the value when the signal/event occurs instead of reading mutable state later. Give unattended GUI tests a bounded timeout and disable interactive crash handlers that can turn a crash into a CI hang while preserving useful failure output. When investigating memory corruption or teardown races, run a focused sanitizer pass where the toolchain supports it. A regression is strongest when it passes on the fix and demonstrably fails against the pre-fix code.
