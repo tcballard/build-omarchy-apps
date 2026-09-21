@@ -11,7 +11,7 @@ Distinguish the app source repository from an omarchy-pkgs contributor fork. Ins
 
 Review PKGBUILD and hooks as executable code before any evaluation. Never source an untrusted PKGBUILD merely to inspect metadata. Distinguish runtime, build and test dependencies, package-owned files and user data, compiled architecture and architecture-independent resources. Keep update tracking declarative when the current repository supports it; retain reproducible AUR patches.
 
-Prepare an unsigned package build and inspect the artifact, dependencies, modes, paths and size. Use clean build environments and package/desktop validators where available; record unavailable tests. Do not use aggregate release/deploy commands for contributor validation. Before a packaging PR, perform development handoff and explain update behavior and every untested architecture.
+Prepare an unsigned package build and inspect the artifact, dependencies, modes, paths and size. Use clean build environments and package/desktop validators where available; record unavailable tests. Do not use aggregate release/deploy commands for contributor validation. Before a packaging PR, perform development handoff and explain update behavior, channel policy and every untested architecture. Track source release, package CI, merge, channel publication and device acceptance as separate states.
 
 ## Bundle boundaries
 

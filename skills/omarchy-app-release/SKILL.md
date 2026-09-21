@@ -9,7 +9,7 @@ First perform [development handoff](references/handoff.md). Establish whether th
 
 Tie the version, tag target, changelog, release assets and digests to the same reviewed source. Check licences, dependency lockfiles, architecture-specific outputs, reproducible build instructions, install/upgrade/rollback and actual desktop acceptance. Carry failures and untested platforms visibly into the readiness report. Do not describe a development PR, draft release or unchecked binary as a published stable release.
 
-Prepare concrete release notes and artifact checksums before any requested publication step. For app binaries installed by pacman, avoid a self-updater overwriting package-owned files. Evaluate schema migration rollback separately from package downgrade. Route package PRs to Package/Submit; signing, promotion and production sync of omarchy-pkgs remain repository-operator work. Missing live acceptance can still yield a development handoff, with release readiness explicitly unresolved.
+Prepare concrete release notes and artifact checksums before any requested publication step. Keep published tags and archives immutable; ship later fixes as a new release or a traceable package backport with its own checksum and package-release bump. For app binaries installed by pacman, avoid a self-updater overwriting package-owned files. Evaluate schema migration rollback separately from package downgrade. Route package PRs to Package/Submit; signing, promotion and production sync of omarchy-pkgs remain repository-operator work. Missing live acceptance can still yield a development handoff, with release readiness explicitly unresolved.
 
 ## Bundle boundaries
 
